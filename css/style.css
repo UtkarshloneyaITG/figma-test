@@ -1,0 +1,449 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Lustria';
+  src: url(../assests/font/Lustria/Lustria-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'jost';
+  src: url(../assests/font/Jost/Jost-VariableFont_wght.ttf);
+}
+
+.equal-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.primery-bc {
+  background-color: #FBF8F6;
+}
+
+.font-14px {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.font-16px {
+  font-size: 14px;
+}
+
+.font-20px {
+  font-size: 14px;
+}
+
+.secondary-bc {
+  background-color: #B7D2CB;
+}
+
+.primery-font {
+  font-family: 'jost';
+}
+
+.secondry-font {
+  font-family: 'lustria';
+}
+
+.primery-color {
+  color: #262626;
+}
+
+.primery-color-a a {
+  color: #262626;
+}
+
+.primery-button {
+  padding: 13px 36px;
+  background-color: #B7D2CB;
+  font-weight: 480;
+  font-family: jost;
+  font-style: SemiBold;
+  color: #262626;
+  border-radius: 100px;
+  display: inline-block;
+  border: none;
+  width: fit-content;
+  transition: 0.3s;
+}
+
+.primery-button:hover {
+  background-color: rgb(83, 219, 219);
+}
+
+.page-width {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.announcement-bar-contient {
+  padding: 10px;
+  text-align: center;
+}
+
+.site-logo {
+  width: 151px;
+}
+
+.site-logo img {
+  aspect-ratio: 3/1.3;
+  object-fit: cover;
+  height: 64px;
+}
+
+.padding {
+  padding: 13px 130px;
+}
+
+.padding-2 {
+  padding: 80px 130px;
+}
+
+.menu-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  width: 417px;
+  justify-content: space-between;
+}
+
+.navigation ul a {
+  transition: 0.3s;
+}
+
+.navigation ul a:hover {
+  color: gray;
+}
+
+.other-navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.other-navigation nav {
+  display: flex;
+  gap: 30px
+}
+
+.banner-image {
+  height: 654px;
+  position: absolute;
+  right: -40px;
+  overflow: hidden;
+}
+
+.banner-grid {
+  position: relative;
+}
+
+.banner-image img {
+  transform: translateY(-300px);
+  width: 1110px;
+  height: 1110px;
+  z-index: -1;
+}
+
+.banner-inner {
+  background-image: url(../assests/media/Img-BG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 654px;
+}
+
+.banner-grid {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 495px;
+}
+
+.banner-grid h1 {
+  font-size: 45px;
+  font-weight: 400;
+  font-family: lustria;
+  padding-bottom: 15px;
+}
+
+.banner-grid span {
+  text-transform: uppercase;
+}
+
+.banner-grid p {
+  padding-bottom: 20px;
+}
+
+.product-card-image {
+  width: 280px;
+  height: 293px;
+}
+
+.product-card-image img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-card {
+  padding: 20px;
+  width: fit-content;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 25px #0005;
+}
+
+.product-card-info {
+  display: flex;
+  padding-top: 15px;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.product-card-price span {
+  font-size: 20px;
+}
+
+.product-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.page-heading h2 {
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.product-page-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 0px;
+}
+
+.Center-bar {
+  position: absolute;
+  background-color: white;
+  border-radius: 100px;
+  padding: 15px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-section--image {
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+  background-repeat: no-repeat;
+}
+
+.black-background {
+  background-color: #0005;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+}
+
+.image-section-grid {
+  position: relative;
+}
+
+.form-grid {
+  padding: 40px 38px;
+  width: fit-content;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.form-heading h3 {
+  font-size: 28px;
+  padding-bottom: 24px;
+  font-weight: 400;
+}
+
+.form-grid form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-grid form input {
+  border: 1px solid #E0E0E0;
+  padding: 14px;
+  border-radius: 100px;
+}
+
+.checkbox-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.double-input {
+  display: flex;
+  gap: 10px;
+}
+
+.double-input>div,
+.single-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.double-input>div input {
+  width: 350px;
+}
+
+.single-input textarea {
+  height: 80px;
+  border-radius: 20px;
+  border: 1px solid #E0E0E0;
+  resize: none;
+  padding: 14px;
+  outline: none;
+}
+
+.single-input textarea::placeholder {
+  font-family: jost;
+}
+
+.Hobbies-container div {
+  display: flex;
+  gap: 6px;
+}
+
+.Hobbies-container {
+  display: flex;
+  gap: 12px;
+}
+
+.gender-container {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-top-section-grid {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.footer-top-section-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-top-section-grid div h4 {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: Lustria;
+  font-style: regular;
+}
+
+.footer-top-section-grid div p {
+  font-style: 400;
+  font-family: jost;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-grid>div>ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-grid>div {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.footer-form input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.footer-grid h5 {
+  font-family: Lustria;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.footer-form>div {
+  border-bottom: 1px solid #262626;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.footer-form>div button {
+  background-color: transparent;
+  border: none;
+  color: #262626;
+  cursor: pointer;
+}
+
+.footer-form p {
+  width: 378px;
+}
+
+.footer-end {
+  padding: 20px 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-payment-icon {
+  height: 24px;
+}
+
+.footer-grid a {
+  transition: 0.3s;
+}
+
+.footer-grid a:hover {
+  color: gray;
+}
+
+.red {
+  color: red;
+}
