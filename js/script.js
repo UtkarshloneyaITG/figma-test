@@ -1,20 +1,12 @@
 console.log("js running");
-
 const form = document.getElementById("basic-info-form");
 const Hobbies_container = document.querySelector(".Hobbies-container");
-const phone_number = document.getElementById("phone-number");
-const Fname = document.getElementById("Fname");
-const Lname = document.getElementById("Lname");
-const email = document.getElementById("Email-Address");
-const DOB = document.getElementById("DOB");
 const gender_container = document.querySelector(".gender-container");
-const Message = document.getElementById("message");
 const Conditions = document.getElementById("Conditions");
 const Receive = document.getElementById("Receive");
 let SubscribeToNewsletter = document.getElementById("Newsletter");
 let array_of_hobbies = [];
 let Gender = false;
-
 const gendererror = document.getElementById("gendererror");
 const fnameerror = document.getElementById("fname-error");
 const hobbieerror = document.getElementById("hobbieerror");
@@ -24,19 +16,21 @@ const lnameerror = document.getElementById("lnameerror");
 const emailerror = document.getElementById("emailerror");
 const phonenumbererror = document.getElementById("phonenumbererror");
 const doberror = document.getElementById("doberror");
+const obj_of_input = {};
+const direct_get = document.getElementsByClassName("direct-get");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let final_validation = all_validation();
   if (final_validation) {
     const personal_data = {
-      Fname: Fname.value,
-      Lname: Lname.value,
-      email: email.value,
-      DOB: DOB.value,
-      phoneNumber: phone_number.value,
+      Fname: obj_of_input.Fname,
+      Lname: obj_of_input.Lname,
+      email: obj_of_input.email,
+      DOB: obj_of_input.DOB,
+      phoneNumber: obj_of_input.phone_number,
       hobbies: array_of_hobbies,
       gender: Gender,
-      Message: Message.value,
+      Message: obj_of_input.Message,
       SubscribeToNewsletter: SubscribeToNewsletter.checked,
       Agreetoerms_and_Conditions: Conditions.checked,
       ReceivePromotionalOffers: Receive.checked,
@@ -47,14 +41,12 @@ form.addEventListener("submit", (e) => {
 
 function hobbies_finder() {
   let inputs = Hobbies_container.getElementsByTagName("input");
-
   array_of_hobbies = [];
   Array.from(inputs).forEach((ele) => {
     if (ele.checked == true) {
       array_of_hobbies.push(ele.name);
     }
   });
-  console.log(array_of_hobbies.length);
   if (array_of_hobbies.length == 0) {
     hobbieerror.innerHTML = "please select at list one hobby";
     return false;
@@ -63,28 +55,21 @@ function hobbies_finder() {
   return true;
 }
 function phoneNumberChecker() {
-  if (phone_number.value.length >= 10) {
+  if (obj_of_input.phone_number.trim().length >= 10) {
     phonenumbererror.innerHTML = "";
     return true;
   }
-  phonenumbererror.innerHTML = "please enter valid phone number";
+  document.innerHTML = "please enter valid phone number";
   return false;
 }
-
 function nameChecker() {
-  if (Fname.value.trim().length == 0) {
+  if (obj_of_input.Fname.trim().length == 0) {
     fnameerror.innerHTML = "please fill this field";
     return false;
-  }
-  if (
-    (Fname.value[0] >= "a" && Fname.value[0] <= "z") ||
-    (Fname.value[0] >= "A" && Fname.value[0] <= "Z")
-  ) {
+  } else {
     fnameerror.innerHTML = "";
     return true;
   }
-  fnameerror.innerHTML = "please enter vaild name";
-  return false;
 }
 function gender_checker() {
   let inputs = gender_container.getElementsByTagName("input");
@@ -101,7 +86,7 @@ function gender_checker() {
   return true;
 }
 function meassage_check() {
-  if (Message.value.trim().length == 0) {
+  if (obj_of_input.message.trim().length == 0) {
     meassageerror.innerHTML = "please fill this field";
     return false;
   }
@@ -117,22 +102,16 @@ function Conditions_check() {
   return false;
 }
 function LnameChecker() {
-  if (Lname.value.trim().length == 0) {
+  if (obj_of_input.Lname.trim().length == 0) {
     lnameerror.innerHTML = "please fill this field";
     return false;
-  }
-  if (
-    (Lname.value[0] >= "a" && Lname.value[0] <= "z") ||
-    (Lname.value[0] >= "A" && Lname.value[0] <= "Z")
-  ) {
+  } else {
     lnameerror.innerHTML = "";
     return true;
   }
-  lnameerror.innerHTML = "please enter vaild name";
-  return false;
 }
 function dob_checker() {
-  if (DOB.value.trim().length != 0) {
+  if (obj_of_input.DOB.trim().length != 0) {
     doberror.innerHTML = "";
     return true;
   }
@@ -140,7 +119,7 @@ function dob_checker() {
   return false;
 }
 function email_check() {
-  if (email.value.trim().length == 0) {
+  if (obj_of_input.email.trim().length == 0) {
     emailerror.innerText = "please fill this field";
     return false;
   }
@@ -148,6 +127,10 @@ function email_check() {
   return true;
 }
 function all_validation() {
+  Array.from(direct_get).forEach((ele) => {
+    let name = ele.name;
+    obj_of_input[ele.name] = ele.value;
+  });
   dob_checker();
   LnameChecker();
   Conditions_check();
@@ -156,7 +139,7 @@ function all_validation() {
   nameChecker();
   phoneNumberChecker();
   hobbies_finder();
-  email_check()
+  email_check();
   if (
     dob_checker() &&
     LnameChecker() &&

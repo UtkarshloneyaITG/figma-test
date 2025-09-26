@@ -123,6 +123,7 @@
 
 .navigation ul a:hover {
   color: gray;
+
 }
 
 .other-navigation ul {
@@ -155,10 +156,10 @@
 }
 
 .banner-inner {
-  background-image: url(../assests/media/Img-BG.png);
+  /* background-image: url(../assests/media/Img-BG.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 654px;
+  background-size: cover; */
+  /* height: 654px; */
 }
 
 .banner-grid {
@@ -184,8 +185,7 @@
 }
 
 .product-card-image {
-  width: 280px;
-  height: 293px;
+  width: 100%;
 }
 
 .product-card-image img {
@@ -237,6 +237,10 @@
   gap: 40px;
   align-items: center;
   padding: 80px 0px;
+}
+
+.hamberger-icon {
+  display: none;
 }
 
 .Center-bar {
@@ -446,4 +450,226 @@
 
 .red {
   color: red;
+}
+
+.banner-wrapper {
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
+
+@media only screen and (max-width: 1340px) {
+  .product-card-grid {
+    grid-template-columns: repeat(4, 200px);
+    justify-content: space-around;
+  }
+
+  .padding {
+    padding: 13px 60px;
+  }
+
+  .padding-2 {
+    padding: 40px 60px;
+  }
+}
+
+
+
+@media only screen and (max-width: 950px) {
+  .product-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .hamberger-icon {
+    display: block;
+  }
+
+  .double-input>div input {
+    width: 95%;
+  }
+
+  .double-input {
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-end {
+    padding: 10px 60px;
+  }
+
+  .banner-grid h1 {
+    font-size: 30px;
+  }
+
+  .banner-grid {
+    width: 50%;
+  }
+
+  .footer-top-section-grid div {
+    width: 100%;
+  }
+
+  .equal-gap {
+    gap: 40px;
+  }
+
+  .form-inner {
+    padding: 30px 10px 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .footer-top-section-grid {
+    display: none;
+  }
+
+  .equal-gap {
+    gap: 10px;
+  }
+
+  .product-page-grid {
+    padding: 30px 0px;
+  }
+
+  .padding {
+    padding: 6px 30px;
+  }
+
+  .footer-form p {
+    width: 100%;
+  }
+
+  .footer-payment-icon {
+    height: 12px;
+  }
+
+  .footer-end {
+    font-size: 12px;
+  }
+
+  .banner-wrapper img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .banner-grid p,
+  .product-card-price span,
+  .other-navigation {
+    font-size: 15px;
+  }
+
+  .page-heading h2,
+  .form-heading h3 {
+    font-size: 20px;
+  }
+
+  .Hobbies-container {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+
+  .site-logo img {
+    height: 50px;
+  }
+
+  .form-grid {
+    width: 80%;
+  }
+
+  .svg-size {
+    width: 15px;
+    height: 15px;
+  }
+
+  .primery-color-a a {
+    color: #262626;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .other-navigation nav ul {
+    display: none;
+  }
+
+  .banner-grid h1 {
+    font-size: 20px;
+  }
+
+  .banner-grid p,
+  .banner-grid span {
+    font-size: 10px;
+  }
+
+  .primery-button {
+    font-size: 10px;
+    padding: 10px 20px
+  }
+
+  .site-logo {
+    width: 70px;
+  }
+
+  .site-logo img {
+    height: 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-end {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .Hobbies-container {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid form input {
+    padding: 7px;
+  }
+
+  .padding-2 {
+    padding: 30px 30px
+  }
+
+  .image-section-inner {
+    padding: 0;
+  }
+
+  .Center-bar {
+    padding: 10px 8px;
+  }
+
+  .product-card-grid {
+    grid-template-columns: repeat(1, 300px);
+  }
+
+  .form-grid {
+    padding: 20px 30px;
+  }
 }
