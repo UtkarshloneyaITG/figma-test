@@ -155,13 +155,6 @@
   z-index: -1;
 }
 
-.banner-inner {
-  /* background-image: url(../assests/media/Img-BG.png);
-  background-repeat: no-repeat;
-  background-size: cover; */
-  /* height: 654px; */
-}
-
 .banner-grid {
   height: 100%;
   display: flex;
@@ -620,7 +613,8 @@
     font-size: 10px;
   }
 
-  .primery-button {
+  .primery-button,
+  .form-grid label {
     font-size: 10px;
     padding: 10px 20px
   }
@@ -666,10 +660,24 @@
   }
 
   .product-card-grid {
-    grid-template-columns: repeat(1, 300px);
+    grid-template-columns: repeat(1, 260px);
   }
 
   .form-grid {
     padding: 20px 30px;
+  }
+
+  .banner-wrapper img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .banner-grid {
+    width: 80%;
+  }
+
+  .announcement-bar-contient {
+    padding: 3px;
+    text-align: center;
+    font-size: 10px;
   }
 }
