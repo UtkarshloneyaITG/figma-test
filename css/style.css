@@ -119,11 +119,26 @@
 
 .navigation ul a {
   transition: 0.3s;
+  position: relative;
+}
+
+.navigation ul a::before {
+  content: "";
+  width: 0px;
+  height: 3px;
+  background-color: #3d3d3d;
+  position: absolute;
+  bottom: 0;
+  transition: 0.3s;
 }
 
 .navigation ul a:hover {
   color: gray;
 
+}
+
+.navigation ul a:hover::before {
+  width: 100%;
 }
 
 .other-navigation ul {
@@ -455,6 +470,17 @@
   left: 0%;
   transform: translate(0, -50%);
   width: 100%;
+}
+
+input[type="checkbox"] {
+  accent-color: #262626;
+  /* Sets the accent color to red */
+}
+
+/* Styling for radio buttons */
+input[type="radio"] {
+  accent-color: #262626;
+  /* Sets the accent color to blue */
 }
 
 @media only screen and (max-width: 1340px) {

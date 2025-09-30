@@ -18,6 +18,14 @@ const phonenumbererror = document.getElementById("phonenumbererror");
 const doberror = document.getElementById("doberror");
 const obj_of_input = {};
 const direct_get = document.getElementsByClassName("direct-get");
+const DOB = document.getElementById('DOB')
+let date = new Date()
+let fullYear = date.getFullYear()
+let month = date.getMonth()
+let today = date.getDate()
+
+DOB.max = `${fullYear}-${String(month).padStart(2,0)}-${String(today).padStart(2,0)}`
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let final_validation = all_validation();
@@ -30,7 +38,7 @@ form.addEventListener("submit", (e) => {
       phoneNumber: obj_of_input.phone_number,
       hobbies: array_of_hobbies,
       gender: Gender,
-      Message: obj_of_input.Message,
+      Message: obj_of_input.message,
       SubscribeToNewsletter: SubscribeToNewsletter.checked,
       Agreetoerms_and_Conditions: Conditions.checked,
       ReceivePromotionalOffers: Receive.checked,
@@ -55,11 +63,12 @@ function hobbies_finder() {
   return true;
 }
 function phoneNumberChecker() {
-  if (obj_of_input.phone_number.trim().length >= 10) {
+  console.log()
+  if (obj_of_input.phone_number.trim().length >= 10 && /^\d+?\d*$/.test(obj_of_input.phone_number)) {
     phonenumbererror.innerHTML = "";
     return true;
   }
-  document.innerHTML = "please enter valid phone number";
+  phonenumbererror.innerHTML = "please enter valid phone number";
   return false;
 }
 function nameChecker() {
@@ -75,7 +84,7 @@ function gender_checker() {
   let inputs = gender_container.getElementsByTagName("input");
   Array.from(inputs).forEach((value) => {
     if (value.checked == true) {
-      Gender = value.name;
+      Gender = value.value;
     }
   });
   if (!Gender) {
@@ -131,6 +140,7 @@ function all_validation() {
     let name = ele.name;
     obj_of_input[ele.name] = ele.value;
   });
+  // console.log(obj_of_input)
   dob_checker();
   LnameChecker();
   Conditions_check();
